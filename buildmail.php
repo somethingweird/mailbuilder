@@ -30,6 +30,9 @@ namespace hwong02 {
             if (! is_null($this->from)) { 
                 $header = "From: ".$this->from."\r\n";
             };
+            if (! is_null($this->subject)) { 
+                $header = "From: ".$this->subject."\r\n";
+            };
             if (! is_null($this->cc)) { 
                 $header = "CC: ".$this->cc."\r\n";
             };
