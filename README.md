@@ -24,6 +24,7 @@ $o -> from('somethingweird@yahoo.com')
  ->attach('somefile')  
 
 ->sendEmail('smtp.yahoo.com', 25);
+?>
 ```
 
 ## Installation
