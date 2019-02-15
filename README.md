@@ -5,13 +5,13 @@
 A high level php library from sending e-mail.
 
 ## Code Samples
-
+```php
 <?php
 require('buildmail.php');
 
 $o = new hwong02\email();
 
-$o->from('somethingweird@yahoo.com')
+$o -> from('somethingweird@yahoo.com')
 
 ->to('anyone@yahoo.com')
 
@@ -24,7 +24,7 @@ $o->from('somethingweird@yahoo.com')
  ->attach('somefile')  
 
 ->sendEmail('smtp.yahoo.com', 25);
-
+```
 
 ## Installation
 
