@@ -36,7 +36,11 @@ namespace hwong02 {
             if (! is_null($this->cc)) { 
                 $header = "CC: ".$this->cc."\r\n";
             };
-
+            if (! is_null($this->replyTo)) {
+                $header .= "Reply-To: ".$this->replyTo."\r\n";
+            };
+            
+            
             if (! is_null($message)) {
                 $header .= "MIME-Version: 1.0\r\n";
             };
@@ -57,7 +61,7 @@ namespace hwong02 {
                 $message = ($message) ?? "This is a MIME encoded message.";
                 $message .= "\r\n\r\n--" . $this->boundary . "\r\n";
                 $message .= "Content-type: text/plain;charset=utf-8\r\n\r\n";
-                $message .= $this->text;
+                $message .= wordwrap($this->text);
             }
 
             if (! is_null($this->html)) {
@@ -65,7 +69,7 @@ namespace hwong02 {
                 $message = ($message) ?? "This is a MIME encoded message.";
                 $message .= "\r\n\r\n--" . $this->boundary . "\r\n";
                 $message .= "Content-Type: text/html;charset=utf-8\r\n\r\n";
-                $message .= $this->html;
+                $message .= wordwrap($this->html);
             }
             $this->attachment=array_unique($this->attachment);
             if (count($this->attachment) > 0) {
